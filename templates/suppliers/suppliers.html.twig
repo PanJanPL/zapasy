@@ -1,0 +1,26 @@
+{% extends 'table.html.twig' %}
+
+{% block title %}
+        Suppliers
+{% endblock %}
+
+{% block table %}
+    <table>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+    </tr>
+    {% for row in result %}
+        <tr>
+            {% for cell in row %}
+            <td>
+                {{cell}}
+            </td>
+            {% endfor %}
+            <td>
+                <a href="/deleteSupplier/{{row["id"]}}">DELETE</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'table.html.twig' %}
+
+{% block title %}
+        Orders
+{% endblock %}
+
+{% block table %}
+    <table>
+    <tr>
+        <th>ID</th>
+        <th>SUPPLIER ID</th>
+        <th>NAME</th>
+        <th>QUANTITY</th>
+    </tr>
+    {% for row in result %}
+        <tr>
+            {% for cell in row %}
+            <td>
+                {{cell}}
+            </td>
+            {% endfor %}
+            <td>
+                <a href="/completeOrder/{{row["id"]}}">COMPLETE</a>
+            </td>
+            <td>
+                <a href="/deleteOrder/{{row["id"]}}">DELETE</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
