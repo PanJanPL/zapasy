@@ -17,6 +17,8 @@ class ChangeQuantityController extends AbstractController
         
         $sql="UPDATE `inventory` SET `quantity` = `quantity` - 1 WHERE `id` =".$id;
         $conn->executeQuery($sql);
+        $sql="DELETE FROM `inventory` Where `quantity` <= 0";
+        $conn->executeQuery($sql);
         $sql="Select * From `inventory`";
         $resultSet = $conn->executeQuery($sql);
 
