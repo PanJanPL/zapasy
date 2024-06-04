@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+        Barcode
+{% endblock %}
+
+{% block body %}
+    <style>
+        section {
+        background-color: var(--pico-background-color);
+        color: var(--pico-color);
+        }
+    </style>
+    <article data-theme="light">
+        {{barcode|raw}}
+    </article>
+{% endblock %}

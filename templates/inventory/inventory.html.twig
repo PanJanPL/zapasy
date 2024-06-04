@@ -21,8 +21,10 @@
             <td>
                 <a href="/changeQuantity/{{row["id"]}}">Decrease by 1</a>
             </td>
+            <td>
+                <a href="/barcode/{{row["id"]}}">Barcode</a>
+            </td>
         </tr>
     {% endfor %}
     </table>
-
 {% endblock %}

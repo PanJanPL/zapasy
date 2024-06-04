@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Twig\Environment;
 use Endroid\QrCode\Builder\BuilderInterface;
-use Endroid\QrCodeBundle\Response\QrCodeResponse;
+
 
 class InventoryController extends AbstractController
 {
@@ -20,8 +20,10 @@ class InventoryController extends AbstractController
         $conn = $entityManager->getConnection();
         $sql="Select * From `inventory`";
         $resultSet = $conn->executeQuery($sql);
+        
         return new Response($twig->render('inventory/inventory.html.twig', array(
             "result" => $resultSet->fetchAllAssociative(),
         )));
     }
+     
 }
